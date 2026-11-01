@@ -71,7 +71,7 @@ export const PAYMENT_STUDENT_PROFILE: StudentProfileConfig = {
   email: "sanjeevkumardumri@gmail.com",
   program: "Semester 1 • BCA",
   mobile: "+91 9876543210",
-  studentId: "EDNORA_906953",
+  studentId: "EDUVANTA_906953",
   avatarUrl: "https://i.pravatar.cc/240?img=12",
   status: "Active account",
 };

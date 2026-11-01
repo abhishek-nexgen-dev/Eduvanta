@@ -26,14 +26,14 @@ interface AdminUser {
 export default function SettingsPage() {
   const [activeTab, setActiveTab] = useState<"social" | "branding" | "admins">("social");
   const [socialLinks, setSocialLinks] = useState<BackendSocialLinks>({
-    linkedin: "https://www.linkedin.com/school/ednora",
-    facebook: "https://facebook.com/ednora",
-    instagram: "https://instagram.com/ednora",
-    email: "info@ednora.edu",
+    linkedin: "https://www.linkedin.com/school/eduvanta",
+    facebook: "https://facebook.com/eduvanta",
+    instagram: "https://instagram.com/eduvanta",
+    email: "info@eduvanta.edu",
     number: "9661342993",
   });
   const [frontendSettings, setFrontendSettings] = useState<BackendFrontendSettings>({
-    logo: "Ednora",
+    logo: "Eduvanta",
     landingPage: {
       HeroSection: {
         homeTitle: "Shape Tomorrow with Quality Education",
@@ -377,7 +377,7 @@ export default function SettingsPage() {
                 <input
                   type="email"
                   required
-                  placeholder="e.g. coordinator@ednora.edu"
+                  placeholder="e.g. coordinator@eduvanta.edu"
                   value={newAdminEmail}
                   onChange={(e) => setNewAdminEmail(e.target.value)}
                   className="flex-1 px-3 py-2.5 bg-zinc-900 border border-zinc-800 rounded-xl text-xs sm:text-sm text-white focus:outline-none focus:border-indigo-500"

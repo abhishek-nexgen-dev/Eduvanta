@@ -17,7 +17,7 @@ describe("App", () => {
         </QueryClientProvider>
       </>,
     );
-    const headingElements = screen.getAllByText(/Ednora/i);
+    const headingElements = screen.getAllByText(/Eduvanta|Ednora/i);
     expect(headingElements.length).toBeGreaterThan(0);
     expect(headingElements[0]).toBeInTheDocument();
   });

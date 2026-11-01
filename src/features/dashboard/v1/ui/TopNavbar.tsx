@@ -16,7 +16,7 @@ function TopNavbar() {
   const handleLogout = () => {
     logout();
     navigate("/");
-    toast.info("Signed out of Ednora Admin Session.");
+    toast.info("Signed out of Eduvanta Admin Session.");
   };
 
   return (
@@ -40,7 +40,7 @@ function TopNavbar() {
           {/* Help Desk */}
           <button
             onClick={() =>
-              toast.info("Ednora Support: support@ednora.edu | Hotline: +91 6202665784")
+              toast.info("Eduvanta Support: support@eduvanta.edu | Hotline: +91 6202665784")
             }
             className="p-2 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-800/80 border border-transparent hover:border-zinc-700/80 transition"
             title="Institutional Help Desk"
@@ -58,7 +58,9 @@ function TopNavbar() {
                 {user?.name || "Prof. R. K. Sharma"}
               </p>
               <p className="text-[10px] text-zinc-400 leading-tight">
-                {user?.role === "admin" ? "Super Administrator" : "Institutional Admin"}
+                {user?.role === "super admin" || user?.role === "super_admin" || user?.email?.toLowerCase() === "admin@gmail.com"
+                  ? "Super Administrator"
+                  : "Institutional Admin"}
               </p>
             </div>
             <button

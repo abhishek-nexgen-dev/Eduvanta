@@ -212,7 +212,7 @@ export default function AdmissionsPage() {
               Student Application & Admission Review
             </h1>
             <p className="text-xs sm:text-sm text-zinc-400 mt-1">
-              Verify credentials, review qualifying scores, and approve student admissions into Ednora.
+              Verify credentials, review qualifying scores, and approve student admissions into Eduvanta.
             </p>
           </div>
 
@@ -289,11 +289,11 @@ export default function AdmissionsPage() {
             <Search size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-500" />
             <input
               type="text"
-              placeholder="Search by Unique ID (EDNORA_906953), Candidate Name, or Course..."
+              placeholder="Search by Unique ID (EDUVANTA_906953), Candidate Name, or Course..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               onKeyDown={(e) => {
-                if (e.key === "Enter" && (searchTerm.trim().startsWith("EDNORA") || searchTerm.trim().startsWith("CIITM"))) {
+                if (e.key === "Enter" && (searchTerm.trim().startsWith("EDUVANTA") || searchTerm.trim().startsWith("EDNORA") || searchTerm.trim().startsWith("CIITM"))) {
                   handleSearchUniqueId(searchTerm);
                 }
               }}

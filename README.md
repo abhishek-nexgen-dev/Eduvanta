@@ -1,4 +1,4 @@
-# Ednora Desktop — Institutional Academic & ERP Management Suite 🎓
+# Eduvanta Desktop — Institutional Academic & ERP Management Suite 🎓
 
 [![Tauri 2.0](https://img.shields.io/badge/Tauri-2.0-blue.svg?logo=tauri)](https://v2.tauri.app/)
 [![React 19](https://img.shields.io/badge/React-19.0-61DAFB.svg?logo=react)](https://react.dev/)
@@ -6,8 +6,9 @@
 [![Vite](https://img.shields.io/badge/Vite-7.3-646CFF.svg?logo=vite)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38B2AC.svg?logo=tailwind-css)](https://tailwindcss.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![SourceForge](https://img.shields.io/badge/SourceForge-Eduvanta-orange.svg)](https://sourceforge.net/projects/eduvanta/)
 
-**Ednora Desktop** is a modern, cross-platform academic and institutional enterprise desktop application built with **Tauri 2**, **Rust**, **React 19**, and **TypeScript**. Designed for universities, polytechnics, and institutes, Ednora provides an end-to-end administration portal for curriculum planning, faculty directory management, student admissions processing, fee billing, and institutional media assets.
+**Eduvanta Desktop** is a modern, cross-platform academic and institutional enterprise desktop application built with **Tauri 2**, **Rust**, **React 19**, and **TypeScript**. Designed for universities, polytechnics, and institutes, Eduvanta provides an end-to-end administration portal for curriculum planning, faculty directory management, student admissions processing, fee billing, and institutional media assets.
 
 ---
 
@@ -34,7 +35,7 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                       Ednora Desktop                        │
+│                      Eduvanta Desktop                       │
 │                                                             │
 │   ┌─────────────────────────────────────────────────────┐   │
 │   │                 React 19 Frontend                   │   │
@@ -139,7 +140,7 @@ Ensure the following runtimes and system libraries are installed:
 
 ## ⚙️ Environment Configuration
 
-Ednora Desktop relies on environment variables defined in `.env`:
+Eduvanta Desktop relies on environment variables defined in `.env`:
 
 ```bash
 cp .env.example .env
@@ -198,22 +199,22 @@ Output bundles will be generated under `src-tauri/target/release/bundle/`.
 
 ### 🐧 Linux Flatpak & Flathub Packaging
 
-Ednora includes complete packaging specifications for public distribution on **Flathub** under Application ID `com.ednora.desktop`.
+Eduvanta includes complete packaging specifications for public distribution on **Flathub** under Application ID `com.eduvanta.desktop`.
 
 The `flatpak/` directory contains:
-- `com.ednora.desktop.yml`: The official Flatpak manifest based on `org.gnome.Platform 47`.
-- `com.ednora.desktop.metainfo.xml`: AppStream catalog specification with OARS 1.1 content ratings.
-- `com.ednora.desktop.desktop`: FreeDesktop application launcher entry.
+- `com.eduvanta.desktop.yml`: The official Flatpak manifest based on `org.gnome.Platform 47`.
+- `com.eduvanta.desktop.metainfo.xml`: AppStream catalog specification with OARS 1.1 content ratings.
+- `com.eduvanta.desktop.desktop`: FreeDesktop application launcher entry.
 - `icons/`: Hicolor PNG icons (`32x32`, `64x64`, `128x128`, `256x256`, `512x512`).
 - `build-flatpak.sh`: Local build and validation helper script.
 
 #### Validate Metadata Files Offline:
 ```bash
 # Validate desktop file
-desktop-file-validate flatpak/com.ednora.desktop.desktop
+desktop-file-validate flatpak/com.eduvanta.desktop.desktop
 
 # Validate AppStream metainfo
-appstreamcli validate --no-net flatpak/com.ednora.desktop.metainfo.xml
+appstreamcli validate --no-net flatpak/com.eduvanta.desktop.metainfo.xml
 ```
 
 #### Build Flatpak Locally:
@@ -225,8 +226,8 @@ sudo apt-get update && sudo apt-get install -y flatpak-builder
 ./flatpak/build-flatpak.sh
 
 # 3. Install and run the bundle locally
-flatpak install --user --bundle ednora-x86_64.flatpak
-flatpak run com.ednora.desktop
+flatpak install --user --bundle eduvanta-x86_64.flatpak
+flatpak run com.eduvanta.desktop
 ```
 
 *For complete Flathub PR submission guidelines, refer to [flatpak/README.md](flatpak/README.md).*
@@ -242,7 +243,7 @@ The automated workflow is located at:
 
 #### Triggering the Workflow:
 1. Navigate to **GitHub Actions** in your repository.
-2. Select the **Build Ednora Desktop for macOS** workflow.
+2. Select the **Build Eduvanta Desktop for macOS** workflow.
 3. Click **Run workflow** (or push a git release tag `v*.*.*`).
 4. Once completed, download the `.dmg` installer directly from GitHub Actions artifacts or releases.
 
@@ -257,9 +258,9 @@ ciitm-desktop/
 │       └── build-macos.yml          # GitHub Actions macOS DMG build runner
 ├── flatpak/
 │   ├── build-flatpak.sh             # Flatpak packaging automation script
-│   ├── com.ednora.desktop.desktop   # FreeDesktop application entry
-│   ├── com.ednora.desktop.metainfo.xml # AppStream metadata specification
-│   ├── com.ednora.desktop.yml       # Flatpak build manifest (GNOME 47)
+│   ├── com.eduvanta.desktop.desktop   # FreeDesktop application entry
+│   ├── com.eduvanta.desktop.metainfo.xml # AppStream metadata specification
+│   ├── com.eduvanta.desktop.yml       # Flatpak build manifest (GNOME 47)
 │   ├── icons/                       # Hicolor PNG icons (32px - 512px)
 │   └── README.md                    # Detailed Flathub packaging documentation
 ├── src/

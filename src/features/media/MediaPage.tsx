@@ -110,7 +110,7 @@ export default function MediaPage() {
       ctx.font = "bold 32px sans-serif";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
-      ctx.fillText(name || "Ednora Campus Media", 400, 300);
+      ctx.fillText(name || "Eduvanta Campus Media", 400, 300);
       ctx.font = "18px sans-serif";
       ctx.fillStyle = "#94a3b8";
       ctx.fillText("Official Digital Archive", 400, 345);
@@ -383,7 +383,7 @@ export default function MediaPage() {
                   {selectedAlbum.albumName || selectedAlbum.aName || "Campus Album"}
                 </h2>
                 <p className="text-xs text-zinc-400 line-clamp-1 mt-0.5">
-                  {selectedAlbum.description || selectedAlbum.aDescription || "Official Ednora Album Gallery"}
+                  {selectedAlbum.description || selectedAlbum.aDescription || "Official Eduvanta Album Gallery"}
                 </p>
               </div>
             </div>
@@ -475,7 +475,7 @@ export default function MediaPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
             {filteredAlbums.map((album) => {
               const name = album.albumName || album.aName || "Campus Album";
-              const desc = album.description || album.aDescription || "Ednora Campus Digital Archive";
+              const desc = album.description || album.aDescription || "Eduvanta Campus Digital Archive";
               const count = getAlbumImageCount(album._id, album);
 
               // Find first image belonging to album if cover is empty

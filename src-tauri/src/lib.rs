@@ -1,7 +1,7 @@
 // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
 #[tauri::command]
 fn greet(name: &str) -> String {
-    format!("Hello, {}! Connected to Ednora Desktop Rust Core.", name)
+    format!("Hello, {}! Connected to Eduvanta Desktop Rust Core.", name)
 }
 
 #[tauri::command]

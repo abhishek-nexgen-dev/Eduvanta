@@ -20,6 +20,7 @@ export function getValidToken(): string {
     !token ||
     typeof token !== "string" ||
     token.split(".").length !== 3 ||
+    token === "eduvanta_admin_session_token" ||
     token === "ednora_admin_session_token" ||
     token === "ciitm_admin_session_token" ||
     token.includes("1791344170") // Replace expired token
@@ -28,6 +29,7 @@ export function getValidToken(): string {
     if (token) {
       useAuthStorage.getState().setToken(token);
       if (typeof localStorage !== "undefined") {
+        localStorage.setItem("eduvanta_admin_token", token);
         localStorage.setItem("ednora_admin_token", token);
       }
     }
@@ -89,6 +91,7 @@ api.interceptors.response.use(
       if (freshToken) {
         useAuthStorage.getState().setToken(freshToken);
         if (typeof localStorage !== "undefined") {
+          localStorage.setItem("eduvanta_admin_token", freshToken);
           localStorage.setItem("ednora_admin_token", freshToken);
         }
 

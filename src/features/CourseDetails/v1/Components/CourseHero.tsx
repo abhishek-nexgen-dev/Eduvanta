@@ -63,7 +63,7 @@ export default function CourseHero({
           <div className="rounded-xl border border-zinc-800 bg-black/60 px-3.5 py-1.5 backdrop-blur-md">
             <p className="text-[10px] uppercase tracking-widest text-zinc-400">Institution</p>
             <p className="mt-0.5 text-xs sm:text-sm font-semibold text-indigo-300">
-              Ednora Academic Board
+              Eduvanta Academic Board
             </p>
           </div>
         </div>

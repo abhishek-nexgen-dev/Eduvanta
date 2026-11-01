@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.eduvanta.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Eduvanta</name>
+  <summary>Institutional Academic and ERP Desktop Platform</summary>
+  <description>
+    <p>
+      Eduvanta is a modern academic and institutional enterprise desktop application built with Tauri and React.
+      It provides comprehensive tooling for managing higher-education institutions, courses, admissions, faculty,
+      and student records.
+    </p>
+    <p>Key Capabilities:</p>
+    <ul>
+      <li>Curriculum and Course Management with multi-tier admission criteria</li>
+      <li>Faculty and Departmental Staff Directory with credentials management</li>
+      <li>Student Enrollment and Admissions Processing with automated notification dispatches</li>
+      <li>Integrated Fee Accounting, payment ledger tracking, and receipts</li>
+      <li>Institutional Media Gallery and Campus Notice Board</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">com.eduvanta.desktop.desktop</launchable>
+  <url type="homepage">https://sourceforge.net/projects/eduvanta/</url>
+  <url type="bugtracker">https://github.com/NexGenStudioDev/ednora-web/issues</url>
+  <developer id="dev.nexgenstudios">
+    <name>Abhishek NexGen</name>
+  </developer>
+  <provides>
+    <binary>eduvanta</binary>
+  </provides>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Eduvanta Academic Management Dashboard</caption>
+      <image>https://raw.githubusercontent.com/NexGenStudioDev/ednora-web/master/public/logo.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="1.0.0" date="2026-10-27">
+      <description>
+        <p>Initial release of Eduvanta Desktop application featuring:</p>
+        <ul>
+          <li>Interactive course catalog and curriculum management</li>
+          <li>Faculty directory with image upload support</li>
+          <li>Admission review workflow and fee management</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>
+

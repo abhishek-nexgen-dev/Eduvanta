@@ -30,7 +30,7 @@ const PaymentPage = () => {
     if (!student) {
       const loadInitialStudent = async () => {
         try {
-          const res = await api.get("/api/v1/Student/FindByUniqueId?uniqueId=EDNORA_906953");
+          const res = await api.get("/api/v1/Student/FindByUniqueId?uniqueId=EDUVANTA_906953");
           if (res.data?.data) {
             setStudents([res.data.data]);
             return;
@@ -71,7 +71,7 @@ const PaymentPage = () => {
       <div className="w-full px-3.5 sm:px-6 lg:px-8 py-8 text-white max-w-7xl mx-auto space-y-6">
         <StudentSearch />
         <div className="py-20 text-center text-zinc-500">
-          Enter a Student ID (e.g. EDNORA-2026-9842) above to inspect tuition fee records.
+          Enter a Student ID (e.g. EDUVANTA-2026-9842) above to inspect tuition fee records.
         </div>
       </div>
     );

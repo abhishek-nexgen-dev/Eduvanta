@@ -1,0 +1,56 @@
+app-id: com.eduvanta.desktop
+runtime: org.gnome.Platform
+runtime-version: '47'
+sdk: org.gnome.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.rust-stable
+  - org.freedesktop.Sdk.Extension.node22
+command: eduvanta
+
+finish-args:
+  # Display and windowing systems
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --share=ipc
+  # Hardware accelerated graphics
+  - --device=dri
+  # Network access for university backend API & Cloudinary assets
+  - --share=network
+  # Desktop notifications
+  - --talk-name=org.freedesktop.Notifications
+
+build-options:
+  append-path: /usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/node22/bin
+  env:
+    CARGO_HOME: /run/build/eduvanta/cargo
+    npm_config_cache: /run/build/eduvanta/npm-cache
+
+modules:
+  - name: eduvanta
+    buildsystem: simple
+    build-commands:
+      # Install node dependencies and build frontend
+      - npm ci || npm install
+      - npm run build
+
+      # Build native Tauri Rust binary
+      - cargo build --release --manifest-path src-tauri/Cargo.toml
+
+      # Install binary
+      - install -Dm755 src-tauri/target/release/eduvanta /app/bin/eduvanta
+
+      # Install desktop integration files
+      - install -Dm644 flatpak/com.eduvanta.desktop.desktop /app/share/applications/com.eduvanta.desktop.desktop
+      - install -Dm644 flatpak/com.eduvanta.desktop.metainfo.xml /app/share/metainfo/com.eduvanta.desktop.metainfo.xml
+
+      # Install icons in standard FreeDesktop hicolor resolutions
+      - install -Dm644 flatpak/icons/32x32.png /app/share/icons/hicolor/32x32/apps/com.eduvanta.desktop.png
+      - install -Dm644 flatpak/icons/64x64.png /app/share/icons/hicolor/64x64/apps/com.eduvanta.desktop.png
+      - install -Dm644 flatpak/icons/128x128.png /app/share/icons/hicolor/128x128/apps/com.eduvanta.desktop.png
+      - install -Dm644 flatpak/icons/256x256.png /app/share/icons/hicolor/256x256/apps/com.eduvanta.desktop.png
+      - install -Dm644 flatpak/icons/512x512.png /app/share/icons/hicolor/512x512/apps/com.eduvanta.desktop.png
+
+    sources:
+      - type: dir
+        path: ..
+

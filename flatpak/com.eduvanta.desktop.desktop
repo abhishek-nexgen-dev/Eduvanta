@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Eduvanta
+GenericName=Academic Management Platform
+Comment=Eduvanta Institutional Academic & ERP Desktop Platform
+Exec=eduvanta
+Icon=com.eduvanta.desktop
+Terminal=false
+Categories=Education;
+Keywords=Education;College;University;ERP;Academics;Courses;Faculty;Students;
+StartupNotify=true
+StartupWMClass=eduvanta
+

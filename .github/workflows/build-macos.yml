@@ -1,4 +1,4 @@
-name: Build macOS (Ednora DMG)
+name: Build macOS (Eduvanta DMG)
 
 on:
   workflow_dispatch:
@@ -72,7 +72,7 @@ jobs:
 
       - name: Build Desktop Application (Tauri 2)
         run: |
-          echo "==> Building Ednora Desktop with flags: ${{ steps.flags.outputs.build_args }}"
+          echo "==> Building Eduvanta Desktop with flags: ${{ steps.flags.outputs.build_args }}"
           npm run tauri:build -- ${{ steps.flags.outputs.build_args }}
 
       - name: Prepare Artifacts & Archive .app Bundle
@@ -90,12 +90,12 @@ jobs:
           fi
 
           # Archive .app bundle using ditto to preserve macOS permissions & resource forks
-          APP_DIR=$(find src-tauri/target -name "Ednora.app" -type d | head -n 1)
+          APP_DIR=$(find src-tauri/target -name "Eduvanta.app" -o -name "Ednora.app" -type d | head -n 1)
           if [ -n "$APP_DIR" ]; then
             echo "Found .app bundle at $APP_DIR. Archiving into zip..."
             PARENT_DIR=$(dirname "$APP_DIR")
-            (cd "$PARENT_DIR" && ditto -c -k --sequesterRsrc --keepParent "Ednora.app" "Ednora-macOS.app.zip")
-            cp "$PARENT_DIR/Ednora-macOS.app.zip" dist-artifacts/
+            (cd "$PARENT_DIR" && ditto -c -k --sequesterRsrc --keepParent "Eduvanta.app" "Eduvanta-macOS.app.zip")
+            cp "$PARENT_DIR/Eduvanta-macOS.app.zip" dist-artifacts/
           fi
 
       - name: Verify Build Deliverables
@@ -112,7 +112,7 @@ jobs:
       - name: Upload macOS DMG Installer Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Ednora-macOS-DMG-${{ inputs.target || 'universal' }}
+          name: Eduvanta-macOS-DMG-${{ inputs.target || 'universal' }}
           path: dist-artifacts/*.dmg
           if-no-files-found: error
           retention-days: 14
@@ -120,7 +120,7 @@ jobs:
       - name: Upload macOS App Bundle Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Ednora-macOS-AppBundle-${{ inputs.target || 'universal' }}
+          name: Eduvanta-macOS-AppBundle-${{ inputs.target || 'universal' }}
           path: dist-artifacts/*.zip
           if-no-files-found: warn
           retention-days: 14

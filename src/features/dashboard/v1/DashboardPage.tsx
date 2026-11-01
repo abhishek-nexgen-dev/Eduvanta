@@ -218,7 +218,7 @@ const DashboardPage = () => {
             <div className="space-y-2 max-w-2xl">
               <div className="flex flex-wrap items-center gap-2">
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/15 px-3 py-1 text-xs font-semibold text-indigo-300">
-                  <ShieldCheck size={13} className="text-indigo-400" /> Ednora Institutional ERP
+                  <ShieldCheck size={13} className="text-indigo-400" /> Eduvanta Institutional ERP
                 </span>
                 {isTauri ? (
                   <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-400">

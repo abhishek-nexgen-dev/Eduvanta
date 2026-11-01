@@ -3,7 +3,7 @@ import { Sidebar } from "./ui/SideBar";
 import { Menu } from "lucide-react";
 import { useSidebarStore } from "./store/sidebar.store";
 import useAuthStorage from "../../../login/v1/hooks/useAuthStorage";
-import { EDNORA_LOGO_LOCAL, EDNORA_LOGO_URL } from "../../../../constant/logo.constant";
+import { EDUVANTA_LOGO_LOCAL, EDUVANTA_LOGO_URL } from "../../../../constant/logo.constant";
 
 const Template = () => {
   const toggleMobile = useSidebarStore((state) => state.toggleMobile);
@@ -25,11 +25,11 @@ const Template = () => {
             </button>
             <div className="flex items-center gap-2">
               <img
-                src={EDNORA_LOGO_LOCAL}
+                src={EDUVANTA_LOGO_LOCAL}
                 onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).src = EDNORA_LOGO_URL;
+                  (e.currentTarget as HTMLImageElement).src = EDUVANTA_LOGO_URL;
                 }}
-                alt="Ednora"
+                alt="Eduvanta"
                 className="h-full w-1/2 object-contain"
               />
          

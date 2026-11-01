@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import { toast, ToastContainer } from "react-toastify";
 import api, { getErrorMessage } from "../../Utils/api.utils";
-import { EDNORA_LOGO_LOCAL, EDNORA_LOGO_URL } from "../../constant/logo.constant";
+import { EDUVANTA_LOGO_LOCAL, EDUVANTA_LOGO_URL } from "../../constant/logo.constant";
 
 export default function ForgotPasswordPage() {
   const [step, setStep] = useState<1 | 2 | 3>(1);
@@ -154,11 +154,11 @@ export default function ForgotPasswordPage() {
         <div className="text-center space-y-3">
           <div className="mx-auto flex h-16 w-auto max-w-[200px] items-center justify-center mb-1">
             <img
-              src={EDNORA_LOGO_LOCAL}
+              src={EDUVANTA_LOGO_LOCAL}
               onError={(e) => {
-                (e.currentTarget as HTMLImageElement).src = EDNORA_LOGO_URL;
+                (e.currentTarget as HTMLImageElement).src = EDUVANTA_LOGO_URL;
               }}
-              alt="Ednora Logo"
+              alt="Eduvanta Logo"
               className="h-14 w-auto max-w-full object-contain drop-shadow-[0_4px_16px_rgba(99,102,241,0.25)]"
             />
           </div>
@@ -171,7 +171,7 @@ export default function ForgotPasswordPage() {
               Reset Credentials
             </h1>
             <p className="text-xs sm:text-sm text-zinc-400 mt-1">
-              Ednora Institutional Administrator Access Recovery
+              Eduvanta Institutional Administrator Access Recovery
             </p>
           </div>
 
@@ -543,7 +543,7 @@ export default function ForgotPasswordPage() {
 
         {/* Security Footer Notice */}
         <p className="text-center text-[11px] text-zinc-600">
-          Ednora Security Protocol v4.2 • Protected by TLS 1.3 Strict & AMQP Clearance
+          Eduvanta Security Protocol v4.2 • Protected by TLS 1.3 Strict & AMQP Clearance
         </p>
       </div>
     </main>

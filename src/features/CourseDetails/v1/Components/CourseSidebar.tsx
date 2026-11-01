@@ -140,7 +140,7 @@ export default function CourseSidebar() {
 
         <div className="mt-4 space-y-3.5">
           <InfoRow icon={<Phone size={16} />} title="Contact Desk" value="+91 96613 42993" />
-          <InfoRow icon={<Mail size={16} />} title="Office Email" value="info@ednora.edu" />
+          <InfoRow icon={<Mail size={16} />} title="Office Email" value="info@eduvanta.edu" />
           <InfoRow icon={<MapPin size={16} />} title="Campus Location" value="Dhanbad, Jharkhand" />
         </div>
       </Card>

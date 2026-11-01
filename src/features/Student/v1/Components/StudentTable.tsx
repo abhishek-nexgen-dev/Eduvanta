@@ -169,7 +169,7 @@ export function StudentTable() {
           student
           {students.length !== 1 ? "s" : ""}
         </p>
-        <span className="text-[11px] text-zinc-500">Ednora Student Information System</span>
+        <span className="text-[11px] text-zinc-500">Eduvanta Student Information System</span>
       </div>
     </section>
   );

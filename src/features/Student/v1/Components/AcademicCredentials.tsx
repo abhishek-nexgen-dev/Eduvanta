@@ -87,7 +87,7 @@ function AcademicCredentials() {
         <div className="mt-4 grid gap-4 sm:grid-cols-2 text-xs sm:text-sm">
           <div className="flex justify-between">
             <span className="text-zinc-500">Institution</span>
-            <span className="text-zinc-200">{student?.university || "Ednora Academy"}</span>
+            <span className="text-zinc-200">{student?.university || "Eduvanta Academy"}</span>
           </div>
 
           <div className="flex justify-between">

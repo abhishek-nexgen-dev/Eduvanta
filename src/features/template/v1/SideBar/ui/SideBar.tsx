@@ -4,7 +4,7 @@ import { useSidebarStore } from "../store/sidebar.store";
 import { SidebarItem } from "./SidebarItem";
 import { sidebarConfig } from "../config/sidebar.config";
 import useAuthStorage from "../../../../login/v1/hooks/useAuthStorage";
-import { EDNORA_LOGO_LOCAL, EDNORA_LOGO_URL } from "../../../../../constant/logo.constant";
+import { EDUVANTA_LOGO_LOCAL, EDUVANTA_LOGO_URL } from "../../../../../constant/logo.constant";
 
 export const Sidebar = () => {
   const { collapsed, toggleCollapse, mobileOpen, setMobileOpen } = useSidebarStore();
@@ -26,11 +26,11 @@ export const Sidebar = () => {
           {(!collapsed || mobileOpen) && (
             <div className="truncate  flex items-start">
               <img
-              src={EDNORA_LOGO_LOCAL}
+              src={EDUVANTA_LOGO_LOCAL}
               onError={(e) => {
-                (e.currentTarget as HTMLImageElement).src = EDNORA_LOGO_URL;
+                (e.currentTarget as HTMLImageElement).src = EDUVANTA_LOGO_URL;
               }}
-              alt="Ednora"
+              alt="Eduvanta"
               className="h-[80%] w-[60%] object-cover"
             />
            

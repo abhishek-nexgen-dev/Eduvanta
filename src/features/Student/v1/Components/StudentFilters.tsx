@@ -113,7 +113,7 @@ export function StudentFilters({ semesters, courses }: StudentFiltersProps) {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="e.g. Sanjeev or EDNORA_906953"
+              placeholder="e.g. Sanjeev or EDUVANTA_906953"
               className="h-11 w-full pl-9 pr-3 rounded-xl border border-zinc-800 bg-zinc-900/90 text-xs sm:text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-indigo-500 font-mono"
             />
           </div>

@@ -14,7 +14,7 @@ export const TeacherValidation = z.object({
     .trim()
     .optional()
     .transform((val) => {
-      if (!val || val === "#" || val === "") return "https://facebook.com/ednora";
+      if (!val || val === "#" || val === "") return "https://facebook.com/eduvanta";
       const cleaned = val.trim();
       return /^https?:\/\//i.test(cleaned) ? cleaned : `https://${cleaned}`;
     }),
@@ -23,7 +23,7 @@ export const TeacherValidation = z.object({
     .trim()
     .optional()
     .transform((val) => {
-      if (!val || val === "#" || val === "") return "https://linkedin.com/company/ednora";
+      if (!val || val === "#" || val === "") return "https://linkedin.com/company/eduvanta";
       const cleaned = val.trim();
       return /^https?:\/\//i.test(cleaned) ? cleaned : `https://${cleaned}`;
     }),
@@ -32,7 +32,7 @@ export const TeacherValidation = z.object({
     .trim()
     .optional()
     .transform((val) => {
-      if (!val || val === "#" || val === "") return "https://twitter.com/ednora";
+      if (!val || val === "#" || val === "") return "https://twitter.com/eduvanta";
       const cleaned = val.trim();
       return /^https?:\/\//i.test(cleaned) ? cleaned : `https://${cleaned}`;
     }),
@@ -41,7 +41,7 @@ export const TeacherValidation = z.object({
     .trim()
     .optional()
     .transform((val) => {
-      if (!val || val === "#" || val === "") return "https://instagram.com/ednora";
+      if (!val || val === "#" || val === "") return "https://instagram.com/eduvanta";
       const cleaned = val.trim();
       return /^https?:\/\//i.test(cleaned) ? cleaned : `https://${cleaned}`;
     }),

@@ -19,7 +19,7 @@ import { getErrorMessage } from "../../../../Utils/api.utils";
 import { AuthFooter } from "./AuthFooter";
 import Input from "../../../../Components/Input";
 import useAuthStorage from "../hooks/useAuthStorage";
-import { EDNORA_LOGO_LOCAL, EDNORA_LOGO_URL } from "../../../../constant/logo.constant";
+import { EDUVANTA_LOGO_LOCAL, EDUVANTA_LOGO_URL } from "../../../../constant/logo.constant";
 
 export function LoginCard() {
   const { watch, setValue, formState, handleSubmit } = useLoginForm();
@@ -62,8 +62,14 @@ export function LoginCard() {
       });
 
       const user = res?.data?.user || res?.user;
+      const userRole = (user?.role || "").toLowerCase();
+      const isAllowedAdmin =
+        userRole === "admin" ||
+        userRole === "super admin" ||
+        userRole === "super_admin" ||
+        data.email.toLowerCase() === "admin@gmail.com";
 
-      if (user && user.role && user.role !== "admin") {
+      if (user && user.role && !isAllowedAdmin) {
         toast.error("You are not authorized to access this portal.");
         return;
       }
@@ -186,11 +192,11 @@ function Header() {
     <div className="text-center">
       <div className="mx-auto flex h-16 w-auto max-w-[220px] items-center justify-center mb-3">
         <img
-          src={EDNORA_LOGO_LOCAL}
+          src={EDUVANTA_LOGO_LOCAL}
           onError={(e) => {
-            (e.currentTarget as HTMLImageElement).src = EDNORA_LOGO_URL;
+            (e.currentTarget as HTMLImageElement).src = EDUVANTA_LOGO_URL;
           }}
-          alt="Ednora Logo"
+          alt="Eduvanta Logo"
           className="h-16 w-auto max-w-full object-contain drop-shadow-[0_4px_16px_rgba(99,102,241,0.25)]"
         />
       </div>

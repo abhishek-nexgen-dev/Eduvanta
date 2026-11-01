@@ -46,7 +46,7 @@ export default function useLogin() {
               _id: "6740b2f5a8c43d9124a87211",
               name: "Prof. R. K. Sharma",
               email: testEmail,
-              role: "admin",
+              role: "super admin",
             },
           };
         }
@@ -57,11 +57,18 @@ export default function useLogin() {
     onSuccess: (res: LoginResult) => {
       const user = res?.data?.user || res?.user || res?.data;
       if (user) {
+        const normalizedRole =
+          user.role === "super admin" ||
+          user.role === "super_admin" ||
+          user.email?.toLowerCase() === "admin@gmail.com"
+            ? "super admin"
+            : (user.role || "admin");
+
         useAuthStorage.getState().setUser({
           _id: user._id || "admin_1",
           name: user.name || "Prof. R. K. Sharma",
           email: user.email || "admin@gmail.com",
-          role: user.role || "admin",
+          role: normalizedRole,
         });
 
         const token =

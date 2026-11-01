@@ -7,7 +7,7 @@ const ManageCourseTitle = () => {
       <div>
         <h1 className="text-4xl font-bold">Manage Courses</h1>
 
-        <p className="mt-2 text-zinc-400">View and manage all courses offered by Ednora.</p>
+        <p className="mt-2 text-zinc-400">View and manage all courses offered by Eduvanta.</p>
       </div>
 
       <Link

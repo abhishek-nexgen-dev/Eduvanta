@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "Ednora",
+  "productName": "Eduvanta",
   "version": "1.0.0",
-  "identifier": "com.ednora.desktop",
+  "identifier": "com.eduvanta.desktop",
   "build": {
     "beforeDevCommand": "npm run dev",
     "devUrl": "http://localhost:1420",
@@ -13,7 +13,7 @@
     "windows": [
       {
         "label": "main",
-        "title": "Ednora — Where Knowledge Finds Its Future",
+        "title": "Eduvanta — Where Knowledge Finds Its Future",
         "width": 1280,
         "height": 800,
         "minWidth": 960,
@@ -40,8 +40,8 @@
       "icons/icon.ico"
     ],
     "category": "Education",
-    "shortDescription": "Ednora — Where Knowledge Finds Its Future",
-    "longDescription": "Ednora Institutional Academic & ERP Desktop Platform. Where Knowledge Finds Its Future.",
+    "shortDescription": "Eduvanta — Where Knowledge Finds Its Future",
+    "longDescription": "Eduvanta Institutional Academic & ERP Desktop Platform. Where Knowledge Finds Its Future.",
     "macOS": {
       "minimumSystemVersion": "10.15",
       "dmg": {

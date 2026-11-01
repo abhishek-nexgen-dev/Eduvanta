@@ -4,7 +4,7 @@ const LoginPageFooter = () => {
       <div className="flex flex-col items-center justify-between gap-4 text-xs sm:flex-row">
         {/* Copyright */}
         <p className="text-center text-zinc-500">
-          © {new Date().getFullYear()} <span className="font-medium text-zinc-300">Ednora</span>. All
+          © {new Date().getFullYear()} <span className="font-medium text-zinc-300">Eduvanta</span>. All
           rights reserved.
         </p>
 

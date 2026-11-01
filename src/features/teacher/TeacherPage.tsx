@@ -199,10 +199,10 @@ export default function TeacherPage() {
       payload.append("phone", validated.phone || "+91 94311 00000");
 
       // Validated social media URLs (guaranteed valid URI format)
-      payload.append("facebook", validated.facebook || "https://facebook.com/ednora");
-      payload.append("linkedin", validated.linkedin || "https://linkedin.com/company/ednora");
-      payload.append("twitter", validated.twitter || "https://twitter.com/ednora");
-      payload.append("instagram", validated.instagram || "https://instagram.com/ednora");
+      payload.append("facebook", validated.facebook || "https://facebook.com/eduvanta");
+      payload.append("linkedin", validated.linkedin || "https://linkedin.com/company/eduvanta");
+      payload.append("twitter", validated.twitter || "https://twitter.com/eduvanta");
+      payload.append("instagram", validated.instagram || "https://instagram.com/eduvanta");
 
       if (avatarFile) {
         payload.append("Avtar", avatarFile);
@@ -658,7 +658,7 @@ export default function TeacherPage() {
                   <label className="text-xs text-zinc-300 font-medium">Institutional Email *</label>
                   <input
                     type="email"
-                    placeholder="rajesh.kumar@ednora.edu"
+                    placeholder="rajesh.kumar@eduvanta.edu"
                     value={formData.email}
                     onChange={(e) => {
                       setFormData({ ...formData, email: e.target.value });

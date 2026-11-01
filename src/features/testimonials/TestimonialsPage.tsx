@@ -482,7 +482,7 @@ export default function TestimonialsPage() {
                 required
                 value={formData.message}
                 onChange={(e) => setFormData((prev) => ({ ...prev, message: e.target.value }))}
-                placeholder="Describe your learning experience, faculty guidance, and career launch at Ednora..."
+                placeholder="Describe your learning experience, faculty guidance, and career launch at Eduvanta..."
                 className="w-full rounded-xl border border-zinc-800 bg-zinc-900/70 p-3.5 text-sm text-zinc-100 placeholder:text-zinc-500 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 outline-none transition"
               />
             </div>

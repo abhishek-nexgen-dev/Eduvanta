@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 function StudentSearch() {
   const inputId = useId();
-  const [studentId, setStudentId] = useState("EDNORA_906953");
+  const [studentId, setStudentId] = useState("EDUVANTA_906953");
   const [searching, setSearching] = useState(false);
 
   const handleSubmit = useCallback(
@@ -67,7 +67,7 @@ function StudentSearch() {
             onChange={(event) => setStudentId(event.target.value)}
             autoComplete="off"
             spellCheck={false}
-            placeholder="e.g. EDNORA_906953"
+            placeholder="e.g. EDUVANTA_906953"
             className="h-12 sm:h-14 w-full rounded-2xl border border-white/10 bg-black/40 px-11 text-sm sm:text-base font-mono text-white outline-none transition placeholder:text-zinc-600 focus:border-emerald-400/50 focus:ring-4 focus:ring-emerald-400/10"
           />
         </div>
