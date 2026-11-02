@@ -40,17 +40,55 @@ function getStoredToken(): string {
   return stored;
 }
 
+function getStoredUser(): AuthStorageState["user"] {
+  if (typeof localStorage === "undefined") return null;
+  const stored =
+    localStorage.getItem("eduvanta_admin_user") ||
+    localStorage.getItem("ednora_admin_user");
+  if (stored) {
+    try {
+      const parsed = JSON.parse(stored);
+      if (parsed && typeof parsed === "object" && parsed.email) {
+        return parsed;
+      }
+    } catch {
+      // Ignore JSON parse error
+    }
+  }
+
+  // Fallback to active administrator if a valid token is present
+  const storedToken =
+    localStorage.getItem("eduvanta_admin_token") ||
+    localStorage.getItem("ednora_admin_token");
+  if (storedToken && storedToken.split(".").length === 3) {
+    return {
+      _id: "689dc35e232ee92a7feab3d0",
+      name: "Administrator",
+      email: "admin@gmail.com",
+      role: "super admin",
+    };
+  }
+
+  return null;
+}
+
 const useAuthStorage = create<AuthStorageState>((set) => ({
   token: getStoredToken(),
-  user: {
-    _id: "689dc35e232ee92a7feab3d0",
-    name: "Admin Kumar",
-    email: "admin@gmail.com",
-    role: "admin",
-  },
+  user: getStoredUser(),
   isRememberMe: false,
 
-  setUser: (user) => set({ user }),
+  setUser: (user) => {
+    if (typeof localStorage !== "undefined") {
+      if (user) {
+        localStorage.setItem("eduvanta_admin_user", JSON.stringify(user));
+        localStorage.setItem("ednora_admin_user", JSON.stringify(user));
+      } else {
+        localStorage.removeItem("eduvanta_admin_user");
+        localStorage.removeItem("ednora_admin_user");
+      }
+    }
+    set({ user });
+  },
   setToken: (token) => {
     const validToken =
       token &&
@@ -74,6 +112,8 @@ const useAuthStorage = create<AuthStorageState>((set) => ({
       localStorage.removeItem("eduvanta_admin_token");
       localStorage.removeItem("ednora_admin_token");
       localStorage.removeItem("ciitm_admin_token");
+      localStorage.removeItem("eduvanta_admin_user");
+      localStorage.removeItem("ednora_admin_user");
     }
     set({ user: null, token: null });
   },

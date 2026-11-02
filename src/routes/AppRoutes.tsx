@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Loader2 } from "lucide-react";
 import Template from "../features/template/v1/SideBar/Template";
+import ProtectedRoute from "./ProtectedRoute";
 
 // Lazy-loaded pages for optimal performance and chunk splitting
 const DashboardPage = lazy(() => import("../features/dashboard/v1/DashboardPage"));
@@ -38,7 +39,13 @@ export function AppRoutes() {
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-        <Route element={<Template />}>
+        <Route
+          element={
+            <ProtectedRoute>
+              <Template />
+            </ProtectedRoute>
+          }
+        >
           <Route path="dashboard" element={<DashboardPage />} />
           <Route path="admissions" element={<AdmissionsPage />} />
           <Route path="status" element={<AdmissionsPage />} />

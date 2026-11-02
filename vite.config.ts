@@ -27,6 +27,9 @@ export default defineConfig(async () => ({
       ignored: ["**/src-tauri/**"],
     },
   },
+  esbuild: {
+    drop: process.env.NODE_ENV === "production" ? ["console", "debugger"] : [],
+  },
   build: {
     chunkSizeWarningLimit: 800,
     rollupOptions: {
